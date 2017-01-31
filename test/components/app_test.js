@@ -13,6 +13,10 @@ describe('App', () => {
     expect(component.find('.comment-box')).to.exist;
   });
 
+  it('shows a comment list', () => {
+    expect(component.find('.comment-list')).to.exist;
+  });
+
 /*
   // Use 'it' to test a single attribute of a target
   it('shows the correct text', () => {
