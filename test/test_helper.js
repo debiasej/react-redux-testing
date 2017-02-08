@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
 
+
 /* Set up testing environment to run like a browser in the command line,
  for when we run Mocka:*/
 // global is the global variable because of my tests are running under node.js
@@ -32,7 +33,12 @@ function renderComponent(ComponentClass, props = {}, state = {}) {
 
 
 /* Build helper for simulating events */
-
+$.fn.simulate = function(eventName, value) {
+  if (value) {
+    this.val(value);
+  }
+  TestUtils.Simulate[eventName](this[0]);
+}
 
 
 /* Set up chai-jquery */
